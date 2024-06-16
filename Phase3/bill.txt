@@ -1,0 +1,46 @@
+% This is a test file for phase 3: order check
+
+% After Phase 2, I want to print out a check out window where customer can recheck their order.
+
+% Here is my code:
+
+% display order
+disp("Ordering succesfully!")
+fprintf("\n");
+disp("|                  ___Here is your order___                  |    ")
+disp("            Dish             Quantity          Price         ")
+for ii=1:length(dishName)
+    fprintf("%22s          %.0f              %.2f\n", dishName(ii),quantity(ii),dishTotalPrice(ii));  
+end                
+printf("\n");                                          
+fprintf("           Total                              %.2f\n",totalCash);
+
+
+% Here is an example test case 
+
+input: dishName=["Vietnamese coffee" "French Toast"]
+       quantity=[5 1]
+       dishTotalPrice=[ 40.00 13.99 ]
+       totalCash=53.99
+
+expected output:
+
+Ordering succesfully!
+
+|                  ___Here is your order___                  |    
+            Dish             Quantity          Price         
+     Vietnamese coffee          5              40.00
+          French Toast          1              13.99
+
+           Total                              53.99
+
+actual output:
+
+Ordering succesfully!
+
+|                  ___Here is your order___                  |    
+            Dish             Quantity          Price         
+     Vietnamese coffee          5              40.00
+          French Toast          1              13.99
+
+           Total                              53.99

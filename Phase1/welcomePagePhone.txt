@@ -1,0 +1,44 @@
+% this is a test file for entering phone number in welcome page
+
+% for phone number, I only want the loop to end until the input is a string of maximum 10 characters with only digits, like: 0987654321.
+
+% Test case 1: right input
+
+input: 0123456789 ( a string of exactly 10 digits)
+expected output: while loop end
+actual output: while loop end
+
+input: 0123 ( a string of less than 10 digits with no space)
+expected output: while loop end
+actual output: while loop end
+
+% Test case 2: all characters are numbers or space but the input string is over 10 characters or void input
+
+input: (nothing)
+expected output: Enter a real phone number:
+actual output: Enter a real phone number:
+
+input: 0123 456 ( a string of under 10 digits include space)
+expected output: Enter a real phone number:
+actual output: Enter a real phone number:
+
+
+input: 09876 54321 (over 10 characters)
+expected output: Enter a real phone number:
+actual output: Enter a real phone number:
+
+% Test case 3: There are typing characters like "a" "b" "c" 
+
+input: a
+expected output: Enter a real phone number:
+actual output: Enter a real phone number:
+
+input: abc
+expected output: Enter a real phone number:
+actual output: Enter a real phone number:
+
+input: 1837abdf
+expected output: Enter a real phone number:
+actual output: Enter a real phone number:
+
+

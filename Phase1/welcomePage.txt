@@ -1,0 +1,198 @@
+% This is a test file for Phase 1
+
+% This program takes users name and phone number as strings 
+
+% show the menu with basic information like dish's name, each dish's price
+ 
+% there is no restriction for name. However for phone number all characters inside the string must be numbers and the number of indexs inside the string must be under 11. A while loop is used to ask for the right syntax for phone number
+
+% the output must be the full menu, customer name and phone number
+
+% Test case 1: name and number are correct
+
+Input: name: Tran Do Phong
+       phone: 0987654321
+
+Expected output: 
+
+------Interactive menu------
+Enter customer 's name:Tran Do Phong
+Enter customer 's phone number:0987654321
+Welcome to Morningstars Cafe, Mr/Mrs Tran Do Phong !
+Please take a look at our cafe's menu!
+                     -----------Menu-----------
+       ___Beverages___                            ___Price___
+1.Vietnamese Coffee                                   8.00
+2.Espresso                                            9.50
+3.Americano                                           9.50
+4.Cappuchino                                          10.50
+5.Latte                                               11.00
+6.Hot chocolate                                       10.50
+        ___Bakery___
+7.Tiramisu                                            11.50
+8.Ham & Cheese Croissant                              9.90
+9.French Toast                                        13.99
+10.Blue berries cake                                  12.99
+____________________________________________________________________
+customer: Tran Do Phong
+phone number :0987654321
+
+
+Actual output: 
+
+------Interactive menu------
+Enter customer 's name:Tran Do Phong
+Enter customer 's phone number:0987654321
+Welcome to Morningstars Cafe, Mr/Mrs Tran Do Phong !
+Please take a look at our cafe's menu!
+                     -----------Menu-----------
+       ___Beverages___                            ___Price___
+1.Vietnamese Coffee                                   8.00
+2.Espresso                                            9.50
+3.Americano                                           9.50
+4.Cappuchino                                          10.50
+5.Latte                                               11.00
+6.Hot chocolate                                       10.50
+        ___Bakery___
+7.Tiramisu                                            11.50
+8.Ham & Cheese Croissant                              9.90
+9.French Toast                                        13.99
+10.Blue berries cake                                  12.99
+____________________________________________________________________
+customer: Tran Do Phong
+phone number :0987654321
+
+
+% Test case 2: phone number is wrong (numbers + characters)   
+               +( numbers + chracter is over 10 spaces)
+
+Input:name: Phong
+
+      phone: input 1: 09764u (numbers+characters less than 10 spaces)
+
+             input 2: 123467yuiy (numbers+characters exactly 10 spaces)
+
+             input 3: 734681324uyu (numbers+characters over 10 spaces)
+
+             input 4: 0912345678 ( right input )
+
+Expected output:
+
+------Interactive menu------
+Enter customer 's name:Phong
+Enter customer 's phone number:09764u
+Enter a real phone number:123467yuiy
+Enter a real phone number:734681324uyu
+Enter a real phone number:0912345678
+Welcome to Morningstars Cafe, Mr/Mrs Phong !
+Please take a look at our cafe's menu!
+                     -----------Menu-----------
+       ___Beverages___                            ___Price___
+1.Vietnamese Coffee                                   8.00
+2.Espresso                                            9.50
+3.Americano                                           9.50
+4.Cappuchino                                          10.50
+5.Latte                                               11.00
+6.Hot chocolate                                       10.50
+        ___Bakery___
+7.Tiramisu                                            11.50
+8.Ham & Cheese Croissant                              9.90
+9.French Toast                                        13.99
+10.Blue berries cake                                  12.99
+____________________________________________________________________
+customer: Phong
+phone number :0912345678
+
+Actual output:
+
+------Interactive menu------
+Enter customer 's name:Phong
+Enter customer 's phone number:09764u
+Enter a real phone number:123467yuiy
+Enter a real phone number:734681324uyu
+Enter a real phone number:0912345678
+Welcome to Morningstars Cafe, Mr/Mrs Phong !
+Please take a look at our cafe's menu!
+                     -----------Menu-----------
+       ___Beverages___                            ___Price___
+1.Vietnamese Coffee                                   8.00
+2.Espresso                                            9.50
+3.Americano                                           9.50
+4.Cappuchino                                          10.50
+5.Latte                                               11.00
+6.Hot chocolate                                       10.50
+        ___Bakery___
+7.Tiramisu                                            11.50
+8.Ham & Cheese Croissant                              9.90
+9.French Toast                                        13.99
+10.Blue berries cake                                  12.99
+____________________________________________________________________
+customer: Phong
+phone number :0912345678
+
+
+
+
+% Test case 3: phone number is wrong (all is characters)   
+               +(all numbers but over 10 spaces)
+
+Input: name: Phong 
+       phone: input 1: iewuriTrqw (all characters)
+
+              input 2: 09876543210 (all numbers but over 10 spaces)
+
+              input 3: 0876543219 (right input) 
+
+Expected output: 
+
+------Interactive menu------
+Enter customer 's name:Phong
+Enter customer 's phone number:iewuriTrqw
+Enter a real phone number:09876543210
+Enter a real phone number:0876543219
+Welcome to Morningstars Cafe, Mr/Mrs Phong !
+Please take a look at our cafe's menu!
+                     -----------Menu-----------
+       ___Beverages___                            ___Price___
+1.Vietnamese Coffee                                   8.00
+2.Espresso                                            9.50
+3.Americano                                           9.50
+4.Cappuchino                                          10.50
+5.Latte                                               11.00
+6.Hot chocolate                                       10.50
+        ___Bakery___
+7.Tiramisu                                            11.50
+8.Ham & Cheese Croissant                              9.90
+9.French Toast                                        13.99
+10.Blue berries cake                                  12.99
+____________________________________________________________________
+customer: Phong
+phone number :0876543219
+
+Actual output:
+
+------Interactive menu------
+Enter customer 's name:Phong
+Enter customer 's phone number:iewuriTrqw
+Enter a real phone number:09876543210
+Enter a real phone number:0876543219
+Welcome to Morningstars Cafe, Mr/Mrs Phong !
+Please take a look at our cafe's menu!
+                     -----------Menu-----------
+       ___Beverages___                            ___Price___
+1.Vietnamese Coffee                                   8.00
+2.Espresso                                            9.50
+3.Americano                                           9.50
+4.Cappuchino                                          10.50
+5.Latte                                               11.00
+6.Hot chocolate                                       10.50
+        ___Bakery___
+7.Tiramisu                                            11.50
+8.Ham & Cheese Croissant                              9.90
+9.French Toast                                        13.99
+10.Blue berries cake                                  12.99
+____________________________________________________________________
+customer: Phong
+phone number :0876543219
+
+

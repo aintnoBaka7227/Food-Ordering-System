@@ -1,0 +1,131 @@
+% This is a test file for merging Phase 2: ordering and Phase 4: Checkout since they are linked directly without any technical related to Phase 3: Bill
+
+% This test case is to check if my customer can order normally, and the order will be print out as a text file. There are several invalid inputs like negative numbers, decimal, wrong chracters to check if my code can handle those situation.
+
+
+% What I expect is a receipt with correct details of the order and the total price 
+
+This is an example test case for my program:
+
+% I will order 3 "Latte", 2 "Ham  & Cheese Croissant", and print out receipt
+
+input:
+name:Phong
+phone: 0336855422
+dish:5
+quantity: 3
+dish:8
+quantity: 2
+
+expected output: 
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 13:09:52 
+
+Customer: PHONG
+Contact number: 0336855422
+
+Latte                  3x  AUD 33.00
+Ham & Cheese Croissant 2x  AUD 19.80
+
+
+Your order costs: AUD 52.80
+                      Thank you!
+***************************************************
+
+actual output:
+
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 13:09:52 
+
+Customer: PHONG
+Contact number: 0336855422
+
+Latte                  3x  AUD 33.00
+Ham & Cheese Croissant 2x  AUD 19.80
+
+
+Your order costs: AUD 52.80
+                      Thank you!
+***************************************************
+
+
+
+
+
+% What was displayed on console
+
+Enter name:Phong
+Enter customer 's phone number:adf
+Enter a real phone number:13409876524
+Enter a real phone number:adfasd1324
+Enter a real phone number:0336855422
+When ordering, enter the dishes'numbers'!
+E.g: for Vietnamese traditional coffee, enter '1'
+We don't take more than 9 per dish per time!
+Choose your dishes:11
+Please enter the dish's number again!
+Choose your dishes:-1.23
+Please enter the dish's number again!
+Choose your dishes:abc
+Please enter the dish's number again!
+Choose your dishes:5
+ Quantity:afd
+Please enter the quantity again!
+ Quantity: 10
+Please enter the quantity again!
+ Quantity: 5.6
+Please enter the quantity again!
+ Quantity: 3
+Do you want to finish your order? (Yes=y; No=n)34
+Please enter the right systax!
+Do you want to finish your order? (Yes=y; No=n)h
+Please enter the right systax!
+Do you want to finish your order? (Yes=y; No=n)n
+Please continue ordering!
+Choose your dishes:1fqw
+Please enter the dish's number again!
+Choose your dishes:8
+ Quantity:afsd345
+Please enter the quantity again!
+ Quantity: 2
+Do you want to finish your order? (Yes=y; No=n)1234
+Please enter the right systax!
+Do you want to finish your order? (Yes=y; No=n)y
+Do you want to cancel your order? (Yes='y', No='n'):are
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):13412
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):n
+ You accepted your order!
+Do you want a recipt? (Yes='y', No='n')afdsf
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')1234
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')asd234
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')y
+Printing receipt...
+Saved on 17-Apr-2023 13:09:52.txt
+
+
+
+% This test case satisfied all my requirements
++ handle wrong inputs
++ right calculation for the prices
++ a string matrix contains correct order
++ a receipt is printed out seccesfully with correct order's details
+
+
+
+
+

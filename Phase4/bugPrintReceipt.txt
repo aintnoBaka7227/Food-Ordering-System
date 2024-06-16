@@ -1,0 +1,72 @@
+% bug while using function "function []= printReceiptTest(matrix, name, phone)"
+
+
+% this is my previous code to print out a text receipt
+
+
+%this function is used for printing receipt as a text file
+
+% take order details 
+function []= printReceiptTest(matrix, name, phone)
+
+% all elements are string
+arguments  
+    matrix(:,3) string
+    name string
+    phone string
+end
+
+% receipt time
+time=datetime("now");
+
+% order total cash
+total=0;
+% calculate order
+for i=1:size(matrix,1)
+    total=total+str2double(matrix(i,3));
+end
+
+%prepare a text file 
+receiptText = fopen("receiptTest.txt",'w');
+fprintf(receiptText, "***************************************************\n" + ...
+    "                Morningstars Coffee\n\n\n" + ...
+    "                      RECEIPT\n " + ...
+    "               %s \n\nCustomer: %s\nContact number: %s\n\n", time, upper(name), phone);
+fprintf(receiptText,"%s", matrix);
+fprintf(receiptText,  "\n\nYour order costs: AUD %.2f\n " + ...
+    "                     Thank you!\n" + ...
+    "***************************************************", total);
+fclose(receiptText);
+
+% record receipt time
+fprintf("Saved on %s.txt\n", time);
+end
+
+
+
+% After running the code, I met some error like this:
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                16-Apr-2023 23:10:31 
+
+Customer: PHONG
+Contact number: 0987654321
+
+Vietnamese CoffeeFrench Toast342455.96
+
+Your order costs: AUD 79.96
+                      Thank you!
+***************************************************
+ 
+
+% It took me a day of thinking to find out that the when i used "fprintf(receiptText, matrix)", "matrix" is a string 2d-array which is not automatically formatted when using fprintf to write on a text file. I had to format each row of the matrix into a single string of characters, and combine all rows into one single string to be able to met the requirments of fprintf functions when using fopen to create and write on a text file. 
+
+% I believed formatting matrix directly in the function is too long and affect its performance, I developed another function called "orderList = formattingListTest(matrix);" to fix the bugs.
+
+
+
+

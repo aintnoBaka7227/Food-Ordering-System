@@ -1,0 +1,150 @@
+% This is a test file for emerging Phase 2, Phase 3, and Phase 4 
+
+% I want to check if the bill and the receipt match each others, or the order's detail is tramsmitted correctly from ordering to create a bill, and then print out the receipt. I focus mostly on the similar between bill and receipt, and how invalid inputs are handled.
+
+% this is an example test case:
+
+input: 
+name: Gregormin
+phone number: 000
+dish:6
+quantity:1
+dish:7
+quantity:1
+
+expected output:
+
+* bill
+
+|                  ___Here is your order___                  |    
+            Dish             Quantity          Price         
+         Hot chocolate          1              10.50
+              Tiramisu          1              11.50
+
+           Total                              22.00
+
+
+* receipt
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 13:26:42 
+
+Customer: GREGORMIN
+Contact number: 000
+
+Hot chocolate          1x  AUD 10.50
+Tiramisu               1x  AUD 11.50
+
+
+Your order costs: AUD 22.00
+                      Thank you!
+***************************************************
+
+
+
+actual output:
+
+* bill
+
+|                  ___Here is your order___                  |    
+            Dish             Quantity          Price         
+         Hot chocolate          1              10.50
+              Tiramisu          1              11.50
+
+           Total                              22.00
+
+
+* receipt
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 13:26:42 
+
+Customer: GREGORMIN
+Contact number: 000
+
+Hot chocolate          1x  AUD 10.50
+Tiramisu               1x  AUD 11.50
+
+
+Your order costs: AUD 22.00
+                      Thank you!
+***************************************************
+
+
+
+
+% what displayed on the console:
+
+Enter name:Gregormin
+Enter customer 's phone number:adsf
+Enter a real phone number:asdf1234
+Enter a real phone number:000
+When ordering, enter the dishes'numbers'!
+E.g: for Vietnamese traditional coffee, enter '1'
+We don't take more than 9 per dish per time!
+Choose your dishes:asdf
+Please enter the dish's number again!
+Choose your dishes:1.25
+Please enter the dish's number again!
+Choose your dishes:-2
+Please enter the dish's number again!
+Choose your dishes:6
+ Quantity:adf
+Please enter the quantity again!
+ Quantity: 10
+Please enter the quantity again!
+ Quantity: 0
+Please enter the quantity again!
+ Quantity: -1.25a
+Please enter the quantity again!
+ Quantity: 1
+Do you want to finish your order? (Yes=y; No=n)a
+Please enter the right systax!
+Do you want to finish your order? (Yes=y; No=n)4
+Please enter the right systax!
+Do you want to finish your order? (Yes=y; No=n)n
+Please continue ordering!
+Choose your dishes:7
+ Quantity:adf
+Please enter the quantity again!
+ Quantity: -1
+Please enter the quantity again!
+ Quantity: 0
+Please enter the quantity again!
+ Quantity: 1
+Do you want to finish your order? (Yes=y; No=n)y
+Ordering succesfully!
+
+|                  ___Here is your order___                  |    
+            Dish             Quantity          Price         
+         Hot chocolate          1              10.50
+              Tiramisu          1              11.50
+
+           Total                              22.00
+Do you want to cancel your order? (Yes='y', No='n'):adsf
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):12
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):n
+ You accepted your order!
+Do you want a recipt? (Yes='y', No='n')asfdd
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')1
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')y
+Printing receipt...
+Saved on 17-Apr-2023 13:26:42.txt
+
+
+
+
+
+% The details on bill and receipt are similar, which means my code run perfectly and handle all wrong inputs precisely. This result is acceptable.

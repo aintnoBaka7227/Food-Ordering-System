@@ -1,0 +1,70 @@
+% this is a test file when i want to combine phase 2 and phase 3 together cause phase 3 is related directly to phase 2
+
+% I have already tested different small code before combining together for these test file so i will focus only on if the code can work continuously through each phase and my ideal output is the check out menu where the order is displayed correctly.
+
+% How I will test this combination: I still check on how the inputs ( both wrong and right) are handled and how the order's imformation is transmitted to phase 3 and display correctly
+
+% Here is an example test case where I will order 2 "Vietnamese coffee" and 2 " Tiramisu". I will enter wrong inputs for both "dish" variable and "dishName" variables: decimal, negative, string of characters. However, my final output shoudld be a checkout with correct order. And during the running, there should be no crashes or delayed because of errors.
+
+% test case:
+
+input:
+
+When ordering, enter the dishes'numbers'!
+E.g: for Vietnamese traditional coffee, enter '1'
+We don't take more than 9 per dish per time!
+Choose your dishes:a
+Please enter the dish's number again!
+Choose your dishes:2.13
+Please enter the dish's number again!
+Choose your dishes:0
+Please enter the dish's number again!
+Choose your dishes:1
+ Quantity:f
+Please enter the quantity again!
+ Quantity: -6.23
+Please enter the quantity again!
+ Quantity: 2
+Do you want to finish your order? (Yes=y; No=n)g
+Please enter the right systax!
+Do you want to finish your order? (Yes=y; No=n)7
+Please enter the right systax!
+Do you want to finish your order? (Yes=y; No=n)n
+Please continue ordering!
+Choose your dishes:6
+ Quantity:h
+Please enter the quantity again!
+ Quantity: 10
+Please enter the quantity again!
+ Quantity: 0
+Please enter the quantity again!
+ Quantity: 2
+Do you want to finish your order? (Yes=y; No=n)h
+Please enter the right systax!
+Do you want to finish your order? (Yes=y; No=n)34a
+Please enter the right systax!
+Do you want to finish your order? (Yes=y; No=n)y
+Ordering succesfully!
+
+expected output:
+
+|                  ___Here is your order___                  |    
+            Dish             Quantity          Price         
+     Vietnamese Coffee          2              16.00
+         Hot chocolate          2              21.00
+
+           Total                              37.00
+
+actual output:
+
+|                  ___Here is your order___                  |    
+            Dish             Quantity          Price         
+     Vietnamese Coffee          2              16.00
+         Hot chocolate          2              21.00
+
+           Total                              37.00
+
+
+% this test case shows my code works well and there is no delayed or errors during ordering.
+
+

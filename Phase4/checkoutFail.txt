@@ -1,0 +1,98 @@
+% This is a test file for Phase 4: Checkout, Part 1: Print receipt or not ?
+
+% I expect the program to keep asking for the right syntax until they enter "y" or "n" and display each comments related to "y" or "n"
+
+% test case 1: right syntax "y" or "n"
+
+input:y
+expected output: Printing receipt...
+actual output: Printing receipt...
+
+input:n
+expected output: Thank you for coming, Mr/Mrs %s, please enjoy your meal!
+actual output: Thank you for coming, Mr/Mrs %s, please enjoy your meal!
+
+% Test case 2: wrong syntax -numbers, other characters
+
+input: 1
+expected output: "Please enter the right systax!"
+                 "Do you want a recipt? (Yes='y', No='n')
+actual output: "Please enter the right systax!"
+               "Do you want a recipt? (Yes='y', No='n')
+
+input: a
+expected output: "Please enter the right systax!"
+                 "Do you want a recipt? (Yes='y', No='n')
+actual output: "Please enter the right systax!"
+               "Do you want a recipt? (Yes='y', No='n')
+
+input: y 08734Rt
+expected output: "Please enter the right systax!"
+                 "Do you want a recipt? (Yes='y', No='n')
+actual output: "Please enter the right systax!"
+               "Do you want a recipt? (Yes='y', No='n')
+
+input: (nothing)
+expected output: "Please enter the right systax!"
+                 "Do you want a recipt? (Yes='y', No='n')
+actual output: "Please enter the right systax!"
+               "Do you want a recipt? (Yes='y', No='n')
+
+
+
+
+% eventhough the code work well, I find out another problems is that when customer want to cancel their order or they enter 
+wrong dishes, wrong quantities there is no way for them to cancel their order to choose again. So I wrore a while loop condition
+outside the previous loop to check if customer want to cancel their order or not? I believed this development allow my program to 
+be more personalized and better customer service.
+
+% cancel order
+stop=input("Do you want to cancel your order? (Yes='y', No='n'):","s");
+while stop~="y" && stop~="n"
+    disp("Please enter the right systax!")
+    stop=input("Do you want to cancel your order? (Yes='y', No='n'):","s");
+end
+
+
+% the full fixed code:
+
+% Part 1: Print receipt or not?
+% cancel order?
+stop=input("Do you want to cancel your order? (Yes='y', No='n'):","s");
+while stop~="y" && stop~="n"
+    disp("Please enter the right systax!")
+    stop=input("Do you want to cancel your order? (Yes='y', No='n'):","s");
+end
+% cancel order
+if stop=="y"
+    disp("Canceling order!")
+else
+    % accept order 
+    if stop=="n"
+        % check user if they want bill or not
+        check=input("Do you want a recipt? (Yes='y', No='n')","s");
+        % allow "y" for yes and "n" for no
+        while check~="y" && check~="n"
+            disp("Please enter the right systax!")
+            check=input("Do you want a recipt? (Yes='y', No='n')","s");
+        end
+        % no receipt
+        if check=="n"
+            fprintf("Thank you for coming, Mr/Mrs %s, please enjoy your meal!\n",name)
+        else
+            %print receipt
+            if check=="y"
+                disp("Printing receipt...")
+            end
+       end
+    end
+end
+
+
+
+
+
+
+
+
+ 

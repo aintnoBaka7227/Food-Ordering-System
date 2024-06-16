@@ -1,0 +1,93 @@
+% Section 2: Test the format using fopen
+
+% Since this file is for developing the receipt backgound by using fopen, I will input random name, phone number, total ( it has to be a number cause I develop the background based on this condition) since I only want to check my code for usinf fopen to create a text file and decorate the background of the receipt
+
+% For example this is a test case for this code:
+
+input: name:phong
+       phone:09887421
+       total:-12.45
+
+expected output:
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                16-Apr-2023 23:37:29 
+
+Customer: PHONG
+Contact number: 09887421
+
+
+
+Your order costs: AUD -12.45
+                      Thank you!
+***************************************************
+
+
+actual output:
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                16-Apr-2023 23:37:29 
+
+Customer: PHONG
+Contact number: 09887421
+
+
+
+Your order costs: AUD -12.45
+                      Thank you!
+***************************************************
+
+
+% another test case for this is there is blank input, so i just want to check the "raw" background of the receipt
+
+input: name:
+       phone:
+       total: 
+
+expected output:
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 01:20:06 
+
+Customer: 
+Contact number: 
+
+
+
+Your order costs: AUD 
+                      Thank you!
+***************************************************
+
+actual output:
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 01:20:06 
+
+Customer: 
+Contact number: 
+
+
+
+Your order costs: AUD 
+                      Thank you!
+***************************************************
+
+
+
+

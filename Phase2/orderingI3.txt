@@ -1,0 +1,61 @@
+% This is a test file for Phase 2, Part 3: Order more?
+
+% This program ask to customer to order more or finish ordering, 'y' as yes to stop and 'n' to continue order. I used while loop to ask for input, and check the syntax. The program allow only two answers 'y' for yes and 'n' for no.
+
+% the programm success if it keeps asking for the correct input if the input is not 'y' or 'n' and return to the top to order if the input is 'y' and stop the program if the input is 'n'. However, I will only test the syntax  case cause I will test the the continue or stop ordering part in Phase 2 test for better result.
+
+% I assume both Part 1 and Part 2 work succesfully before testing Part 3
+
+% In this program, "finish" represents input answer for "continuing order or not question" question.
+
+% take input
+   finish=input("Do you want to finish your order? (Yes=y; No=n)","s");
+   % allow "y" for yes and "n" for no only
+   while finish~="y" && finish~="n"
+       disp("Please enter the right systax!");
+       finish=input("Do you want to finish your order? (Yes=y; No=n)","s");
+   end
+   % stop order
+   if finish=="n"
+       disp("Please continue ordering!")
+   else
+       % order more
+       if finish=="y"
+           disp("Stop ordering")
+       end
+   end
+
+% Test case 1: right syntax 'y' and 'n'
+
+I expect the program to display"Stop ordering" if input is 'y' and display "Please continue ordering!" if input if 'n' 
+
+input: y
+expected output: Stop ordering
+actual output: Stop ordering
+
+input: n
+expected output: Please continue ordering!
+actual output: Please continue ordering!
+
+% Test case 2: other characters and numbers
+
+I expect the program to keep asking me for the right syntax if the input is not 'y' or 'n'
+
+input: a
+expected output: Please enter the right syntax!
+                 Do you want to finish your order? (Yes=y; No=n)
+actual output: Please enter the right syntax!
+               Do you want to finish your order? (Yes=y; No=n)
+
+input: 1
+expected output: Please enter the right syntax!
+                 Do you want to finish your order? (Yes=y; No=n)
+actual output: Please enter the right syntax!
+               Do you want to finish your order? (Yes=y; No=n)
+
+input: aqwr122
+expected output: Please enter the right syntax!
+                 Do you want to finish your order? (Yes=y; No=n)
+actual output: Please enter the right syntax!
+               Do you want to finish your order? (Yes=y; No=n)
+

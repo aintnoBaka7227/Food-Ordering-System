@@ -1,0 +1,88 @@
+% this is a test file for Phase 2, I. Ordering, Part 1: order dishes
+
+*** Phase 2, I. Ordering, Part 2: order quantity share the same idea so i only test Part 1. The only difference is the range for quantity is [1,9]
+
+% customers inputs the number represents a dish, in the range [1,10], in string type. Then i convert it to number by using str2double and store it in an array. I used while loop with str2double and isnan to 
+check 3 inputs conditions: 
+   + is input a number?
+   + is input in the range [1,10]?
+   + is input a integer, not decimal?
+% the code works if all I can check all 3 conditions, and the output is correct if it meets all conditions.
+
+% in this program "dish" represents dish's number
+
+% Test case 1: input is an integer in the range [1,10]
+
+I expect the output is a vector contain that number
+
+* For example
+input: 5
+expected output: 5
+actual output: 5
+
+% Test case 2: input is an number outside [1,10] include decimal
+
+I expect the program to keep asking me the correct input until I enter an integer from 1 to 10
+
+* For example
+input: 12
+expected output: Please enter the dish's number again!
+                 Choose your dishes:
+actual output: Please enter the dish's number again!
+               Choose your dishes:
+
+input: 1.25
+expected output: Please enter the dish's number again!
+                 Choose your dishes:
+actual output: Please enter the dish's number again!
+               Choose your dishes:
+
+input: -1
+expected output: Please enter the dish's number again!
+                 Choose your dishes:
+actual output: Please enter the dish's number again!
+               Choose your dishes:
+
+input: 0
+expected output: Please enter the dish's number again!
+                 Choose your dishes:
+actual output: Please enter the dish's number again!
+               Choose your dishes:
+
+% Test case 3: input is a string of characters or numbers and characters together
+
+I expect the program to keep asking me the correct input until I enter an integer from 1 to 10
+
+* For example
+
+input: a
+expected output: Please enter the dish's number again!
+                 Choose your dishes:
+actual output: Please enter the dish's number again!
+               Choose your dishes:
+
+input: asdgfu
+expected output: Please enter the dish's number again!
+                 Choose your dishes:
+actual output: Please enter the dish's number again!
+               Choose your dishes:
+
+input: asdfaT1234
+expected output: Please enter the dish's number again!
+                 Choose your dishes:
+actual output: Please enter the dish's number again!
+               Choose your dishes:
+
+input: (nothing)
+expected output: Please enter the dish's number again!
+                 Choose your dishes:
+actual output: Please enter the dish's number again!
+               Choose your dishes:
+
+
+
+
+
+
+
+   

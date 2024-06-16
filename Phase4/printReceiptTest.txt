@@ -1,0 +1,137 @@
+% this is a test file for function:   "function []= printReceipt(matrix, name, phone)"
+
+% after the order being stored in a string matrix , this functions take the matrix, phone number and name as string inputs and display them in a formatted text file look like an receipt.
+
+% since I assume that the input is correct, which is a matrix contain three columns: dish name, quantity and price, I just want to check if the text file is well formatted and the function produces an correct receipt and check each part of the function is working properly.
+And due to the fact that this function only work based on another function : "function [orderList]=formattingListTest(matrix)", i will check this function while assuming that "function [orderList]=formattingListTest(matrix)" works well. 
+
+%  test case 1: real and accurate inputs
+
+input:
+name="Phong";
+phone="0987654321";
+order=["Vietnamese Coffee"    "3"    "24"; "French Toast"         "4"    "55.96"];  
+printReceipt(order, name, phone);
+
+expected output:
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                15-Apr-2023 16:23:07 
+
+Customer: PHONG
+Contact number: 0987654321
+
+Vietnamese Coffee      3x	 AUD 24.00
+French Toast           4x	 AUD 55.96
+
+
+Your order costs: AUD 79.96
+                      Thank you!
+***************************************************
+
+
+actual output:
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                15-Apr-2023 16:23:07 
+
+Customer: PHONG
+Contact number: 0987654321
+
+Vietnamese Coffee      3x	 AUD 24.00
+French Toast           4x	 AUD 55.96
+
+
+Your order costs: AUD 79.96
+                      Thank you!
+***************************************************
+
+% Test case 2: accurate inputs for name and phone number but inaccurate inputs for the prices in column 3 in matrix 
+
+input:
+
+name="Chicken";
+phone="09876 4321";
+order=[" Coffee"    "-3"    "24a"; " Toast"         "4"    "-55.96"];  
+printReceiptTest(order, name, phone);
+
+output:
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 02:44:49 
+
+Customer: CHICKEN
+Contact number: 09876 4321
+
+ Coffee                -3x  AUD NaN
+ Toast                 4x  AUD -55.96
+
+
+Your order costs: AUD NaN
+                      Thank you!
+***************************************************
+ 
+% This output is acceptable because my code still function well, the input for the prices was not number lead to the output presented "NaN", which is still acceptable.
+
+
+% Test case 3 :
+
+input: 
+name="";
+phone="";
+order=["" "" ""];
+printReceiptTest(order, name, phone);
+
+expected output:
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 01:31:44 
+
+Customer: 
+Contact number: 
+
+                       x  AUD 
+
+
+Your order costs: AUD 
+                      Thank you!
+***************************************************
+
+actual output:
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 01:31:44 
+
+Customer: 
+Contact number: 
+
+                       x  AUD NaN
+
+
+Your order costs: AUD NaN
+                      Thank you!
+***************************************************
+
+% in this test case, i actually enter a wrong input just to check how my function will react
+% Eventhough the function still worked and the receipt was printed, all the calculation lead to "NaN", which means not a number, which is acceptable to me.
+
+ 

@@ -1,0 +1,30 @@
+% Section 1: Test if the function can calculate the right amount of money customer has to pay.
+
+% These are example test cases with different matrix sizes but are all correct inputs to check this small code functions since I assume the inputs are correct.
+
+% Test case 1: 
+
+input:matrix=["Americano"    "1"    "9.5"; "Latte"        "6"    "66"]
+expected output: 75.50
+actual output: 75.50
+
+% Test case 2:
+
+input: matrix=["Tiramisu"        "2"    "23"   ;"Americano"       "3"    "28.5" ;"French Toast"    "1"    "13.99"]
+expected output: 65.49
+actual output: 65.49
+
+% Test case 3: 
+input: matrix = ["Latte" "0" "0", "Tiramisu" "0" "0"]
+expected output:0
+actual output: 0
+
+% Test case 4:
+input: matrix= ["Cappuchino" "-1" "-3.12"; "Espresso" "1.1" "0"]
+expected output: -3.12
+actual output: -3.12
+
+% Test case 5:
+input: matrix= ["Cappuchino" "-1" "-3.12b"; "Espresso" "1.1" "a"]
+output: NaN
+%this output is acceptable because the code still work eventhough the inputs are incorrect, print out "NaN" means not a number

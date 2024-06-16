@@ -1,0 +1,23 @@
+% Bugs during development
+
+% in my previous code for welcome page, i met some problems with input for phone number:
+
+% take customer phone number 
+phone=input("Enter customer 's phone number:");
+
+% problem 1: a string of numbers contains " " is not allowed
+% problem 2: error when entering characters or string of characters
+% problem 3: wrong inputs: string of numbers over 10 spaces or decimal, negative numbers
+
+
+% After several research on Matlab document on how to find out if the input is not numbers, how to transform from string to double using str2double and isnan to check if the input is actually numbers or not, I change the input to string type and use str2double and isnan to check if the input meet requirements of an actual phone number or not:
+
+% take customer phone number in string
+phone=input("Enter customer 's phone number:","s");
+% ask customer for the right syntax: 10 digits number
+while isnan(str2double(phone)) || strlength(phone)>10
+    phone=input("Enter a real phone number:","s");
+end
+
+
+% After that the code work perfectly as i want and i create a test file to prove my testing

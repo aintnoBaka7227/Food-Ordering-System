@@ -1,0 +1,201 @@
+% this is a test file for Phase 4: Checkout
+
+% Since I have written test files for different small code, in this genereal test file I check how the code runs after emerging differents parts of the program together.
+
+% I will check 4 test cases, 3 test case with valid inputs, one is cancel order, one is don't print receipt and the other is print receipt with correct order and total price , 
+1 test case with invalids inputs for order matrixs. During inputting to answers questions, I will also add several wrongs inputs like numbers, wrong characters or string to check 
+if my program can handle different wrong cases.
+
+
+% Test case 1: correct input, cancel order 
+
+input:
+name="Paul";
+phone="0981234567";
+order=["Americano"                 "5"    "47.5"
+        "Ham & Cheese Croissant"    "1"    "9.9" 
+        "Cappuchino"                "2"    "21"];
+
+expected output: Canceling order!
+
+actual output: Canceling order!
+
+%  What was displayed on console
+
+Do you want to cancel your order? (Yes='y', No='n'):4
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):k
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):y
+Canceling order!
+
+% this test case prove my code can handle wrong inputs and output correct comments
+
+% Test case 2: correct input, accept order, no receipt 
+
+input:
+name="Paul";
+phone="0981234567";
+order=["Americano"                 "5"    "47.5"
+        "Ham & Cheese Croissant"    "1"    "9.9" 
+        "Cappuchino"                "2"    "21"];
+
+expected output:  Thank you for coming, Mr/Mrs Paul, please enjoy your meal!
+
+actual output:Thank you for coming, Mr/Mrs Paul, please enjoy your meal!
+
+% what was displayed on console
+Do you want to cancel your order? (Yes='y', No='n'):45
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):d
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):+
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):n
+ You accepted your order!
+Do you want a recipt? (Yes='y', No='n')h
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')6
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')n
+Thank you for coming, Mr/Mrs Paul, please enjoy your meal!
+
+
+% this prove my code can handle wrong inputs, while still output correct comments
+
+
+% Test case 3: correct input, accept order, print receipt
+
+input:
+name="Paul";
+phone="0981234567";
+order=["Americano"                 "5"    "47.5"
+        "Ham & Cheese Croissant"    "1"    "9.9" 
+        "Cappuchino"                "2"    "21"];
+
+expected output:
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 12:44:05 
+
+Customer: PAUL
+Contact number: 0981234567
+
+Americano              5x  AUD 47.50
+Ham & Cheese Croissant 1x  AUD 9.90
+Cappuchino             2x  AUD 21.00
+
+
+Your order costs: AUD 78.40
+                      Thank you!
+***************************************************
+
+expected output:
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 12:44:05 
+
+Customer: PAUL
+Contact number: 0981234567
+
+Americano              5x  AUD 47.50
+Ham & Cheese Croissant 1x  AUD 9.90
+Cappuchino             2x  AUD 21.00
+
+
+Your order costs: AUD 78.40
+                      Thank you!
+***************************************************
+
+
+% what was displayed on console
+Do you want to cancel your order? (Yes='y', No='n'):127346
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):s324
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):n
+ You accepted your order!
+Do you want a recipt? (Yes='y', No='n')a
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')Y
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')134
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')y
+Printing receipt...
+Saved on 17-Apr-2023 12:44:05.txt
+
+% this prove my code works well with all conditions of inputs, and different expected outputs
+
+
+% Test case 4: invalid inputs for orders while still checking code functionality to handle invalid inputs for both syntax and calculation
+
+input:
+name="sgfsa";
+phone="01278hh1h";
+order=["Americano"                 "5"    "47.5a"
+        "Ham & Cheese Croissant"    "-1"    "9.9" 
+        "Cappuchino"                "2bv"    "21"];
+
+% I expect the code still run dispite invalid inputs to check if the code can still run or not
+
+output:
+
+***************************************************
+                Morningstars Coffee
+
+
+                      RECEIPT
+                17-Apr-2023 12:49:29 
+
+Customer: SGFSA
+Contact number: 01278hh1h
+
+Americano              5x  AUD NaN
+Ham & Cheese Croissant -1x  AUD 9.90
+Cappuchino             2bvx  AUD 21.00
+
+
+Your order costs: AUD NaN
+                      Thank you!
+***************************************************
+
+
+% What was displayed on command window
+
+Do you want to cancel your order? (Yes='y', No='n'):45
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):f
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):n
+ You accepted your order!
+Do you want a recipt? (Yes='y', No='n')asdfa
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')1431adfa
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')y
+Printing receipt...
+Saved on 17-Apr-2023 12:49:29.txt
+
+% This prove my code still be able to handle wrong inputs and print out a text file receipt without any problems. This result is acceptable since my inputs for calculations are no numbers
+so the program will listed them as "NaN" and print out "NaN" on the receipt.
+
+
+
+
+
+
+
+
+
+
+
+  
+ 

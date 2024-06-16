@@ -1,0 +1,125 @@
+% This is a test file for Phase 4: Checkout, Part 1: Print receipt or not? (Fix)
+
+% Cause I only update a while loop outside the former code to check whether customer want to cancel their order or not. I will only check function of this updated loop and check after merging them together, how the code runs.
+
+
+% Section 1: Testing the updated outer loop
+
+% I expect the program to keep asking for the right syntax until they enter "y" or "n" and display each comments related to "y" or "n"
+
+% test case 1: right syntax "y" or "n"
+
+input:y
+expected output: Canceling order!
+actual output: Canceling order!
+
+input:n
+expected output: You accepted your order! 
+actual output: You accepted your order!
+
+% Test case 2: wrong syntax -numbers, other characters
+
+input: 1
+expected output: "Please enter the right systax!"
+                 "Do you want a recipt? (Yes='y', No='n')
+actual output: "Please enter the right systax!"
+               "Do you want a recipt? (Yes='y', No='n')
+
+input: adf
+expected output: "Please enter the right systax!"
+                 "Do you want a recipt? (Yes='y', No='n')
+actual output: "Please enter the right systax!"
+               "Do you want a recipt? (Yes='y', No='n')
+
+input: y 08734Rt
+expected output: "Please enter the right systax!"
+                 "Do you want a recipt? (Yes='y', No='n')
+actual output: "Please enter the right systax!"
+               "Do you want a recipt? (Yes='y', No='n')
+
+input: (nothing)
+expected output: "Please enter the right systax!"
+                 "Do you want a recipt? (Yes='y', No='n')
+actual output: "Please enter the right systax!"
+               "Do you want a recipt? (Yes='y', No='n')
+
+
+
+% Section 2: Testing the full fuction of the code after merging
+
+% I want to check the flow of the code in Part 1, so for each input, I will enter both right and wrong inputs randomly based on each small lines of code inside the function
+
+% I want the whole function to run from choose to cancel order or not, if choose to cancel order the program stop immediately, else customer is asked to print receipt or not.
+
+% example test case 1: the user cancel order 
+
+input: name: Paul
+       cancel: y
+
+expected output:
+Do you want to cancel your order? (Yes='y', No='n'):y
+Canceling order!
+
+actual output:
+Do you want to cancel your order? (Yes='y', No='n'):y
+Canceling order!
+
+
+% example test case 2: if user accept their order but do no want receipt. First the user will enter a name: "Paul". The user will choose to not cancel their order by enter "n". Then he will enter several wrong inputs before he enter "n" again. 
+Then the programm will display : "Thank you for coming, Mr/Mrs Paul, please enjoy your meal!" 
+
+% here is the actual output on the command window
+
+Enter name:Paul
+Do you want to cancel your order? (Yes='y', No='n'):a
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):0
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):
+Please enter the right systax!
+Do you want to cancel your order? (Yes='y', No='n'):n
+ You accepted your order!
+Do you want a recipt? (Yes='y', No='n')6
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')a
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')n
+Thank you for coming, Mr/Mrs Paul, please enjoy your meal!
+
+
+% In here, there are several wrong inputs like numbers, incorrect typing characters. The program worked perfectly 
+
+
+
+% Example test case 3: user will do the same thing like the example 2. However he will enter different name and choose to print receipt. the output will be: Printing receipt...
+
+% Here is the actual output on the command window
+
+Enter name:Michel
+Do you want to cancel your order? (Yes='y', No='n'):n
+ You accepted your order!
+Do you want a recipt? (Yes='y', No='n')1
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')adf
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')
+Please enter the right systax!
+Do you want a recipt? (Yes='y', No='n')y
+Printing receipt...
+
+% In here, there are several wrong inputs like numbers, incorrect typing characters. The program worked perfectly 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+

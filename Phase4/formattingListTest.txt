@@ -1,0 +1,100 @@
+% This is a test file for the function : " function [orderList]=formattingListTest(matrix)"
+
+% This function is used to format the list of items in the receipt
+
+% to test this function, I create a text file and see how the list of items is formatted. I expect the function to create 3 collumns: one for dish's name, one for quantity and one for price.
+All the space and format on each row must share the same form. I assume the input are positive numbers.
+
+% this is the code:
+
+
+function [orderList]=formattingListTest(matrix)
+orderList="";
+
+% format the list as a table
+for i=1:size(matrix, 1)
+
+    % format dish name 
+    blank=23-strlength(matrix(i,1));
+    for j=1:blank
+        matrix(i,1)=matrix(i,1)+" ";
+    end
+
+    % add "x" after quantity
+    matrix(i,2)=matrix(i,2)+"x"+" ";
+
+    % add "AUD" to each dish total price
+    matrix(i,3)=sprintf(" AUD %.2f",matrix(i,3));
+
+    % each row contains dish name, quantity and price
+    for k=1:3
+    orderList=orderList+matrix(i,k);
+    end
+    orderList=orderList+"\n";
+end
+end
+
+
+
+
+%test case 1
+
+order1=["Cappuchino"       "2"    "21"  ;"Hot chocolate"    "1"    "10.5";"Latte"            "3"    "33"];  
+list=formattingListTest(order1);
+
+receiptText = fopen("format1.txt",'w');
+fprintf(receiptText, list);
+fclose(receiptText);
+
+expected output:
+Cappuchino             2x  AUD 21.00
+Hot chocolate          1x  AUD 10.50
+Latte                  3x  AUD 33.00
+
+actual output:
+Cappuchino             2x  AUD 21.00
+Hot chocolate          1x  AUD 10.50
+Latte                  3x  AUD 33.00
+
+
+%test case 2
+
+order2=["Ham & Cheese Croissant"    "3"    "29.7"
+        "Cappuchino"                "1"    "10.5"
+        "Latte"                     "6"    "66" ];  
+list=formattingListTest(order2);
+
+receiptText = fopen("format2.txt",'w');
+fprintf(receiptText, list);
+fclose(receiptText);
+
+expected output:
+Ham & Cheese Croissant 3x  AUD 29.70
+Cappuchino             1x  AUD 10.50
+Latte                  6x  AUD 66.00
+
+actual output:
+Ham & Cheese Croissant 3x  AUD 29.70
+Cappuchino             1x  AUD 10.50
+Latte                  6x  AUD 66.00
+
+
+%test case 3
+
+order3=["Blue berries cake"    "1"    "12.99"
+        "Hot chocolate"        "2"    "21" ];  
+list=formattingListTest(order3);
+
+receiptText = fopen("format3.txt",'w');
+fprintf(receiptText, list);
+fclose(receiptText);
+
+expected output:
+Blue berries cake      1x  AUD 12.99
+Hot chocolate          2x  AUD 21.00
+
+actual output:
+Blue berries cake      1x  AUD 12.99
+Hot chocolate          2x  AUD 21.00
+
+

@@ -1,0 +1,89 @@
+% This is a test file for Phase 2, II. Store order in a matrix
+
+% Assume that Phase 2, I. Ordering works successfully, and I will check if II. Store order in a matrix can produce accurate results based on the input from I. Ordering
+
+% This programme has 3 mains part: 
++ Calculate the total money customer have to pay for the order "totalCash" and calculate the money that scustomer have to pay for each dish seperately before store them inside an array called "dishTotalPrice"
++ Match the number that represent a dish with that dish name and store them in an array called "dishName"
++ Create a string matrix with 3 row "dishName", "quantity" and "dishTotalPrice"
+
+
+% The program is considered success if the ouput is a correct string matrix that contains right dish's, quantity and the money customer has to pay for each dish.
+
+% Here is the code:
+
+
+% string vector contains dishes
+menu=["Vietnamese Coffee", "Espresso", "Americano", "Cappuchino", "Latte", "Hot chocolate", "Tiramisu", "Ham & Cheese Croissant", "French Toast", "Blue berries cake"];
+% vector contains each dish's price
+price=[8.00 9.50 9.50 10.50 11.00 10.50 11.50 9.90 13.99 12.99];
+% order's total money
+totalCash=0;
+% vector contains each item total price
+dishTotalPrice=[];
+for k=1:length(quantity)
+    % calculate order total money
+    totalCash=totalCash+price(allDish(k))*quantity(k);
+    % calculate and store each item total price
+    dishTotalPrice=[dishTotalPrice price(allDish(k))*quantity(k)];
+end
+
+% match numbers represent dishes and dishes' names
+dishName=[];
+for m=1:length(allDish)
+    for n=1:length(menu)
+        if allDish(m)==n
+            dishName=[dishName menu(allDish(m))];
+        end
+    end
+end
+
+% order string mattrix
+order=[];
+for iii=1:length(dishName)
+    % convert nums to string 
+    order=[order; dishName(iii), string(quantity(iii)), string(dishTotalPrice(iii)) ];
+end
+
+disp(order)
+disp(allCash)
+
+
+
+% To test the function of this code, I will create 2 input arrays: "allDish" and "quantity". Since I assume that I. Ordering works well, there are 3 conditions on the elements inside this 2 arrays.
++ all elements inside "allDish" must be integers from 1 to 10
++ all elements inside "quantity" must be integers from 1 to 9
++ two arrays must share the same length, and no vector is void or [], and an element from "allDish" have to match a correspond element in "quantity" in the same position: 1-1, 2-2, ...
+
+
+% For example this is a test case and my desire output:
+
+input: allDish=[ 1 10 3]    ( I will add this section at the beginning of the code )
+       quantity=[2 3 9]
+
+expected output: 
+
+"Vietnamese Coffee"    "2"    "16"   
+"Blue berries cake"    "3"    "38.97"
+"Americano"            "9"    "85.5" 
+
+  140.4700
+
+actual output:
+
+"Vietnamese Coffee"    "2"    "16"   
+"Blue berries cake"    "3"    "38.97"
+"Americano"            "9"    "85.5" 
+
+  140.4700
+
+% I also tested a case when my input is not a number, and check how the code react
+
+input: allDish=[ "a" "1" "a1"]
+       quantity= [ "4" "6" "abc"]
+output:
+Unable to use a value of type string as an index.
+
+% this output is understandable cause I used a string matrix which is not match the code for index only. Which is why I want to transfer all the inputs from string to numbers for easier calculation.      
+
+
